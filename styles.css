@@ -59,7 +59,7 @@ body {
 
 /* Adições para a seção de resultados */
 #results {
-    text-align: center;
+    text-align: left;
 }
 
 .image-container {
