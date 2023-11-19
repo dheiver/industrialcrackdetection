@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     color: #343a40;
+    line-height: 1.6;
 }
 
 header {
@@ -39,6 +40,16 @@ nav a {
 
 section {
     margin-bottom: 30px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 20px;
+}
+
+ul {
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
 }
 
 .image-container {
@@ -51,12 +62,15 @@ section {
     width: calc(33.33% - 10px); /* 33.33% width with a small gap between images */
     max-width: 100%;
     margin-bottom: 10px;
+    border: 1px solid #dee2e6;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    margin-top: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: #ffffff;
