@@ -14,44 +14,45 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header {
+.text-center {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-h1 {
+.display-4 {
     color: #0366d6;
 }
 
-p {
+.lead {
+    font-size: 1.25rem;
     line-height: 1.6;
 }
 
-ul {
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.authors-list {
     list-style-type: none;
     padding: 0;
 }
 
-a {
+.authors-list li {
+    margin-bottom: 0.5rem;
+}
+
+.authors-list a {
     color: #0366d6;
     text-decoration: none;
 }
 
-a:hover {
+.authors-list a:hover {
     text-decoration: underline;
 }
 
-section {
-    margin-bottom: 30px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #777;
-}
-
-/* Responsive Styling */
 @media screen and (max-width: 600px) {
     .container {
         width: 100%;
