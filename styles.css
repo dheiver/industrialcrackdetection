@@ -1,3 +1,9 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
@@ -42,6 +48,7 @@ section {
     margin-bottom: 30px;
     border-bottom: 1px solid #dee2e6;
     padding-bottom: 20px;
+    text-align: justify; /* Align text content */
 }
 
 ul {
@@ -71,7 +78,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 20px; /* Adjust the value of padding as needed */
+    padding: 20px;
     background-color: #007bff;
     color: #ffffff;
     text-align: center;
