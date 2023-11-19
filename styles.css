@@ -1,11 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #495057;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -19,10 +25,6 @@ h1 {
 
 p {
     line-height: 1.6;
-}
-
-section {
-    margin-bottom: 30px;
 }
 
 ul {
@@ -39,8 +41,20 @@ a:hover {
     text-decoration: underline;
 }
 
+section {
+    margin-bottom: 30px;
+}
+
 footer {
     text-align: center;
     margin-top: 30px;
     color: #777;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
 }
