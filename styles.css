@@ -1,91 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
-    color: #495057;
+    color: #343a40;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #ffffff;
+header {
+    background-color: #007bff;
+    color: #ffffff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.text-center {
+nav {
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.display-4 {
-    color: #0366d6;
-}
-
-.lead {
-    font-size: 1.25rem;
-    line-height: 1.6;
-}
-
-.mb-4 {
-    margin-bottom: 1.5rem;
-}
-
-.mt-4 {
-    margin-top: 1.5rem;
-}
-
-.authors-list {
+nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-.authors-list li {
-    margin-bottom: 0.5rem;
-}
-
-.authors-list a {
-    color: #0366d6;
-    text-decoration: none;
-}
-
-.authors-list a:hover {
-    text-decoration: underline;
-}
-
-.article-section {
-    margin-top: 30px;
-}
-
-/* Adições para a seção de resultados */
-#results {
-    /* text-align: left; Remova esta linha para manter o texto centralizado */
-}
-
-.image-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.image-container img {
-    max-width: 30%;
-    border-radius: 8px;
-    margin-right: 10px;
-}
-
-@media screen and (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .image-container {
-        flex-direction: column;
-    }
-
-    .image-container img {
-        max-width: 100%;
-        margin-bottom: 10px;
-    }
-}
+nav
