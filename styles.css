@@ -88,3 +88,13 @@ footer {
         font-size: 14px;
     }
 }
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+}
