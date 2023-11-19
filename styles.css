@@ -3,6 +3,11 @@ body {
     margin: 20px;
 }
 
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 h1 {
     color: #0366d6;
 }
@@ -11,23 +16,12 @@ p {
     line-height: 1.6;
 }
 
-header {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-}
-
 section {
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
+    margin-bottom: 30px;
 }
 
 footer {
-    margin-top: 50px;
     text-align: center;
+    margin-top: 30px;
     color: #777;
 }
