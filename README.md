@@ -1,85 +1,112 @@
 **Readme.md**
 
-# Detecção de Defeitos em Aço da Severstal
+# Severstal Steel Defect Detection
 
-## Visão Geral
+## Overview
 
-Este projeto fornece um fluxo de trabalho completo para o desafio de Detecção de Defeitos em Aço da Severstal, usando a arquitetura U-Net no Keras. O código é projetado para ser extensível, permitindo experimentação com diferentes arquiteturas de modelos. O fluxo de trabalho é dividido nas seguintes seções:
+This repository provides a complete workflow for the Severstal Steel Defect Detection challenge using the U-Net architecture in Keras. The code is designed for extensibility, allowing experimentation with different model architectures. The workflow is divided into the following sections:
 
-### 1. Pré-processamento
+### 1. Preprocessing
 
-O dataframe de treinamento é expandido para incluir IDs de imagem, e um `mask_count_df` é criado para uso posterior. O `mask_count_df` fornece informações sobre o número de máscaras associadas a cada imagem.
+```python
+train_df = pd.read_csv('train.csv')
+train_df['ImageId'] = train_df['ImageId_ClassId'].apply(lambda x: x.split('_')[0])
+train_df['ClassId'] = train_df['ImageId_ClassId'].apply(lambda x: x.split('_')[1])
+train_df['hasMask'] = ~ train_df['EncodedPixels'].isna()
 
-### 2. Funções Utilitárias
+mask_count_df = train_df.groupby('ImageId').agg(np.sum).reset_index()
+```
 
-Funções utilitárias, principalmente provenientes do kernel de Paul e do código inicial do SIIM, estão incluídas para codificação e decodificação de máscaras. Essas funções são cruciais para a conversão de pixels codificados em máscaras e vice-versa.
+### 2. Utility Functions
 
-### 3. Teste de Amostra
+```python
+def mask2rle(img):
+    # ... (as provided in the code)
+    
+def rle2mask(mask_rle, shape=(256,1600)):
+    # ... (as provided in the code)
+```
 
-Uma imagem de amostra e suas máscaras são visualizadas para fornecer uma visão rápida dos dados.
+### 3. Sample Test
 
-### 4. Gerador de Dados
+```python
+sample_filename = 'db4867ee8.jpg'
+sample_image_df = train_df[train_df['ImageId'] == sample_filename]
+sample_path = f"train_images/{sample_image_df['ImageId'].iloc[0]}"
+sample_img = cv2.imread(sample_path)
+sample_rles = sample_image_df['EncodedPixels'].values
+sample_masks = build_masks(sample_rles, input_shape=(256, 1600))
+```
 
-O gerador de dados é um componente crucial para o carregamento eficiente de dados durante o treinamento do modelo. Ele é projetado para gerar lotes de dados sob demanda, e modificações são desencorajadas, a menos que sejam necessárias.
+### 4. Data Generator
 
-### 5. Arquitetura do Modelo
+```python
+class DataGenerator(keras.utils.Sequence):
+    # ... (as provided in the code)
+```
 
-A arquitetura U-Net usada neste projeto é ligeiramente diferente de outros kernels. Ela prevê todas as quatro máscaras simultaneamente e aceita imagens em tons de cinza como entrada.
+### 5. Model Architecture
 
-### 6. Treinamento
+```python
+def build_model(input_shape):
+    # ... (as provided in the code)
+```
 
-O modelo é treinado por um número limitado de épocas (9 neste caso) devido a restrições de tempo. A perda BCE-Dice é usada para treinamento, oferecendo uma medida de perda mais precisa.
+### 6. Training
 
-### 7. Avaliação e Submissão
+```python
+model = build_model((256, 1600, 1))
 
-O código de avaliação e submissão lida com o desempenho do modelo no conjunto de validação e gera previsões para o conjunto de teste. O código inclui uma solução alternativa para restrições de memória durante a conversão de máscara para RLE.
+history = model.fit_generator(
+    train_generator,
+    validation_data=val_generator,
+    # ... (as provided in the code)
+)
+```
 
-## Histórico de Mudanças
+### 7. Evaluation and Submission
 
-- **V15:** Adicionada a perda BCE-Dice, proporcionando uma medida de perda mais precisa do que a entropia cruzada binária pura (BCE).
+```python
+model.load_weights('model.h5')
 
-## Referências
+test_df = []
 
-- Gerador de dados: [Blog do Keras](https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly)
-- Codificação e decodificação RLE: [Kernel de Paul](https://www.kaggle.com/paulorzp/rle-functions-run-lenght-encode-decode)
-- Inspiração para arquitetura: [Kernel de Jesper Dramsch](https://www.kaggle.com/jesperdramsch/intro-chest-xray-dicom-viz-u-nets-full-data)
-- Codificação de máscaras: [SIIM ACR Pneumothorax Segmentation](https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation/data)
-- Fonte para a perda BCE-Dice: [Perdas para Segmentação](https://lars76.github.io/neural-networks/object-detection/losses-for-segmentation/)
+for i in range(0, test_imgs.shape[0], 500):
+    batch_idx = list(range(i, min(test_imgs.shape[0], i + 500)))
 
-## Como as Máscaras são Criadas?
+    # ... (as provided in the code)
+```
 
-As máscaras são criadas para identificar e delinear áreas de defeitos em imagens de aço. No desafio de Detecção de Defeitos em Aço da Severstal, as máscaras são usadas para representar visualmente a presença de defeitos em diferentes regiões da imagem.
+## Changelog
 
-A criação de máscaras geralmente envolve as seguintes etapas:
+- **V15:** Added BCE-Dice loss for more accurate loss measurement.
 
-1. **Codificação de Pixels (RLE):** As informações de localização do defeito são frequentemente fornecidas na forma de "Run-Length Encoding" (RLE), uma representação compacta de sequências de pixels com o mesmo valor.
+## References
 
-2. **Decodificação para Imagem Binária:** As informações RLE são decodificadas para criar uma representação binária da máscara, onde os pixels pertencentes a um defeito são marcados como 1, e os pixels não defeituosos são marcados como 0.
+- Data generator: [Keras Blog](https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly)
+- RLE encoding and decoding: [Paul's Kernel](https://www.kaggle.com/paulorzp/rle-functions-run-lenght-encode-decode)
+- Architecture inspiration: [Jesper Dramsch's Kernel](https://www.kaggle.com/jesperdramsch/intro-chest-xray-dicom-viz-u-nets-full-data)
+- Mask encoding: [SIIM ACR Pneumothorax Segmentation](https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation/data)
+- Source for BCE-Dice loss: [Losses for Segmentation](https://lars76.github.io/neural-networks/object-detection/losses-for-segmentation/)
 
-3. **Visualização:** A máscara é aplicada à imagem original para destacar as regiões com defeitos.
+## Usage
 
-Nos modelos de aprendizado de máquina, as máscaras servem como rótulos durante o treinamento. O modelo aprende a prever essas máscaras a partir das imagens originais, permitindo a identificação automática de áreas com defeitos em novas imagens.
+1. **Preparation:** Download the Severstal Steel Defect Detection dataset and place the files in the appropriate directories.
 
-A criação eficaz e a manipulação de máscaras são partes essenciais do processo de treinamento para detecção de defeitos em aço. Bibliotecas como o OpenCV são frequentemente usadas para manipulação de imagens e máscaras em Python.
+2. **Training:** Execute the provided code to train the U-Net model. Adjust hyperparameters and the model architecture as needed.
 
-## Uso
+3. **Evaluation:** Evaluate the model on the validation set to check its performance.
 
-1. **Preparação:** Baixe o conjunto de dados da Detecção de Defeitos em Aço da Severstal e coloque os arquivos nos diretórios apropriados.
+4. **Submission:** Generate predictions for the test set and create a submission file.
 
-2. **Treinamento:** Execute o código fornecido para treinar o modelo U-Net. Ajuste os hiperparâmetros e a arquitetura do modelo conforme necessário.
+## Contributors
 
-3. **Avaliação:** Avalie o modelo no conjunto de validação para verificar seu desempenho.
+- [Your Name]
+- [Contributor 1]
+- [Contributor 2]
 
-4. **Submissão:** Gere previsões para o conjunto de teste e crie um arquivo de submissão.
+Feel free to contribute by creating issues, suggesting improvements, or sending pull requests.
 
-## Contribuidores
+## License
 
-- [Seu Nome]
-- [Contribuidor 1]
-- [Contribuidor 2]
-
-Sinta-se à vontade para contribuir, criando problemas, sugerindo melhorias ou enviando solicitações de pull.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
