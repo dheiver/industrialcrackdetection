@@ -59,7 +59,7 @@ body {
 
 /* Adições para a seção de resultados */
 #results {
-    text-align: left;
+    /* text-align: left; Remova esta linha para manter o texto centralizado */
 }
 
 .image-container {
