@@ -2,20 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     color: #343a40;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 header {
     background-color: #007bff;
     color: #ffffff;
     padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
 }
 
 nav {
@@ -37,11 +29,6 @@ nav a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #0056b3;
 }
 
 .container {
@@ -54,9 +41,15 @@ section {
     margin-bottom: 30px;
 }
 
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .image-container img {
-    width: 100%;
-    max-width: 600px;
+    width: calc(33.33% - 10px); /* 33.33% width with a small gap between images */
+    max-width: 100%;
     margin-bottom: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -74,7 +67,9 @@ footer {
     header h1 {
         font-size: 24px;
     }
+}
 
+@media (max-width: 400px) {
     nav a {
         font-size: 14px;
     }
