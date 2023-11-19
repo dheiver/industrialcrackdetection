@@ -71,12 +71,11 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 20px; /* Ajuste o valor do padding conforme necessário */
+    padding: 20px; /* Adjust the value of padding as needed */
     background-color: #007bff;
     color: #ffffff;
     text-align: center;
 }
-
 
 @media (max-width: 600px) {
     header h1 {
