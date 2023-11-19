@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crack and Fissure Detection in Industrial Steel Structures with U-Net</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Main Content -->
@@ -16,33 +18,78 @@
             <p class="lead">Advancing quality control in industrial steel manufacturing through deep learning.</p>
         </header>
 
+        <nav>
+            <ul>
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#motivation">Motivation</a></li>
+                <li><a href="#implementation">Implementation with U-Net</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#video">Explainer Video</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+        </nav>
+
         <section id="authors" class="mb-4">
             <h2>Authors</h2>
             <ul>
-                <li><strong>Dheiver Santos</strong> - CATI Centro Avançado de Tecnologias Inteligentes - Email: <a href="mailto:dheiver@ictcati.live">dheiver@ictcati.live</a></li>
-                <li><strong>Arthur Allex</strong> - CATI Centro Avançado de Tecnologias Inteligentes - Email: <a href="mailto:arthur@ictcati.live">arthur@ictcati.live</a></li>
-                <li><strong>Victor Holanda</strong> - CATI Centro Avançado de Tecnologias Inteligentes - Email: <a href="mailto:victor@ictcati.live">victor@ictcati.live</a></li>
+                <li><strong>Dheiver Santos</strong> - CATI Advanced Center for Intelligent Technologies - Email: <a
+                        href="mailto:dheiver@ictcati.live">dheiver@ictcati.live</a></li>
+                <li><strong>Arthur Allex</strong> - CATI Advanced Center for Intelligent Technologies - Email: <a
+                        href="mailto:arthur@ictcati.live">arthur@ictcati.live</a></li>
+                <li><strong>Victor Holanda</strong> - CATI Advanced Center for Intelligent Technologies - Email: <a
+                        href="mailto:victor@ictcati.live">victor@ictcati.live</a></li>
             </ul>
+        </section>
+
         <section id="introduction" class="mb-4">
             <h2>Introduction</h2>
-            <p>Steel, a cornerstone material in modern construction, undergoes rigorous quality control processes during manufacturing. Detecting cracks and fissures in steel structures, such as pipelines, is crucial for ensuring structural integrity and safety. Conventional inspection systems face challenges in adaptability and cost-effectiveness, driving the exploration of deep learning technologies for industrial applications.</p>
-            <p>In this paper, we propose the application of the U-Net deep learning network for crack and fissure detection in industrial steel structures. Originally designed for semantic segmentation, U-Net's adaptability to smaller training sets positions it as an ideal choice for our industrial application. Our investigation showcases the efficacy of U-Net, particularly when coupled with a pre-trained encoder. The strategic use of transfer learning emerges as a crucial element, significantly elevating the accuracy and stability of our crack and fissure detection models.</p>
-            <p>This research contributes to the field of industrial quality control, with a specific focus on pipelines and steel structures. The successful application of U-Net in crack and fissure detection promises enhanced safety, reduced maintenance costs, and improved efficiency in the industrial sector.</p>
+            <p>Steel, a cornerstone material in modern construction, undergoes rigorous quality control processes during
+                manufacturing. Detecting cracks and fissures in steel structures, such as pipelines, is crucial for
+                ensuring structural integrity and safety. Conventional inspection systems face challenges in
+                adaptability and cost-effectiveness, driving the exploration of deep learning technologies for
+                industrial applications.</p>
+            <p>In this paper, we propose the application of the U-Net deep learning network for crack and fissure
+                detection in industrial steel structures. Originally designed for semantic segmentation, U-Net's
+                adaptability to smaller training sets positions it as an ideal choice for our industrial application.
+                Our investigation showcases the efficacy of U-Net, particularly when coupled with a pre-trained
+                encoder. The strategic use of transfer learning emerges as a crucial element, significantly elevating
+                the accuracy and stability of our crack and fissure detection models.</p>
+            <p>This research contributes to the field of industrial quality control, with a specific focus on pipelines
+                and steel structures. The successful application of U-Net in crack and fissure detection promises
+                enhanced safety, reduced maintenance costs, and improved efficiency in the industrial sector.</p>
         </section>
-    
+
         <section id="motivation" class="mb-4">
             <h2>Motivation</h2>
-            <p>The motivation behind adopting U-Net for crack and fissure detection in industrial steel structures lies in its ability to perform semantic segmentation effectively. Traditional inspection systems in industrial settings often struggle with adaptability and cost-effectiveness. U-Net's segmentation approach offers a flexible and efficient solution, enabling precise identification and localization of structural imperfections in steel pipelines and structures. This innovative application has the potential to redefine quality control processes in the industrial sector.</p>
-            <p>Our motivation extends beyond steel manufacturing. The successful application of U-Net in crack and fissure detection in industrial settings paves the way for broader adoption in other manufacturing sectors, demonstrating the scalability and versatility of deep learning in addressing structural challenges in various industrial applications.</p>
+            <p>The motivation behind adopting U-Net for crack and fissure detection in industrial steel structures
+                lies in its ability to perform semantic segmentation effectively. Traditional inspection systems in
+                industrial settings often struggle with adaptability and cost-effectiveness. U-Net's segmentation
+                approach offers a flexible and efficient solution, enabling precise identification and localization of
+                structural imperfections in steel pipelines and structures. This innovative application has the
+                potential to redefine quality control processes in the industrial sector.</p>
+            <p>Our motivation extends beyond steel manufacturing. The successful application of U-Net in crack and
+                fissure detection in industrial settings paves the way for broader adoption in other manufacturing
+                sectors, demonstrating the scalability and versatility of deep learning in addressing structural
+                challenges in various industrial applications.</p>
         </section>
-    
+
         <section id="implementation" class="mb-4">
             <h2>Implementation with U-Net</h2>
-            <p>The U-Net architecture, originally crafted for semantic segmentation, has demonstrated remarkable effectiveness in detecting cracks and fissures in industrial steel structures. The unique structure of U-Net, with its contracting and expansive paths, enables precise segmentation and localization of structural imperfections in pipelines and steel constructions.</p>
-            <p>Our implementation extends the capabilities of U-Net by incorporating a pre-trained encoder. This addition refines the segmentation process, allowing the model to generalize well even with limited training data. Transfer learning, a key strategic component, plays a pivotal role in enhancing the accuracy and stability of our crack and fissure detection models in industrial settings.</p>
-            <p>We conducted extensive experiments to validate the robustness of our approach in an industrial context. The results not only showcase the superior performance of U-Net in crack and fissure detection but also highlight the potential for further advancements in deep learning techniques for quality control in industrial manufacturing.</p>
+            <p>The U-Net architecture, originally crafted for semantic segmentation, has demonstrated remarkable
+                effectiveness in detecting cracks and fissures in industrial steel structures. The unique structure of
+                U-Net, with its contracting and expansive paths, enables precise segmentation and localization of
+                structural imperfections in pipelines and steel constructions.</p>
+            <p>Our implementation extends the capabilities of U-Net by incorporating a pre-trained encoder. This
+                addition refines the segmentation process, allowing the model to generalize well even with limited
+                training data. Transfer learning, a key strategic component, plays a pivotal role in enhancing the
+                accuracy and stability of our crack and fissure detection models in industrial settings.</p>
+            <p>We conducted extensive experiments to validate the robustness of our approach in an industrial context.
+                The results not only showcase the superior performance of U-Net in crack and fissure detection but also
+                highlight the potential for further advancements in deep learning techniques for quality control in
+                industrial manufacturing.</p>
         </section>
-            
+
         <section id="results" class="mb-4 article-section">
             <h2>Results</h2>
             <div class="image-container">
@@ -52,9 +99,20 @@
             </div>
         </section>
 
+        <section id="video" class="mb-4">
+            <h2>Explainer Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_embed_code" frameborder="0"
+                allowfullscreen></iframe>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 Crack and Fissure Detection Project. All rights reserved.</p>
+        </footer>
+
         <!-- Add more sections as needed -->
 
     </div>
 
 </body>
+
 </html>
