@@ -18,34 +18,42 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top ">
-        <a class="navbar-brand" href="#">CATI</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-md navbar-dark bg-white shadow fixed-top">
+        <a class="navbar-brand" href="#"><img src="logo.png" height="50" id="logo" /></a>
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="#authors">Authors</a>
+                    <a class="nav-link text-primary " href="#authors">Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#introduction">Introduction</a>
+                    <a class="nav-link text-primary" href="#introduction">Introduction</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#motivation">Motivation</a>
+                    <a class="nav-link text-primary" href="#motivation">Motivation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#results">Results</a>
+                    <a class="nav-link text-primary" href="#results">Results</a>
                 </li>
-                <li class="nav-i-mt-lg-auto">
-                    <a class="nav-link text-white" href="#video">Explainer Video</a>
-                </li>
+
             </ul>
         </div>
     </nav>
-    <div class="container mt-lg-5">
-        <h1 class="display-4">Crack and Fissure Detection in Industrial Steel Structures with U-Net</h1>
-        <p class="lead">Advancing quality control in industrial steel manufacturing through deep learning.</p>
+    <div class="container mt-4">
+        <div class="text-center">
+            <h1 class="display-4 ">Crack and Fissure Detection in Industrial Steel Structures with U-Net</h1>
+            <p class="lead">Advancing quality control in industrial steel manufacturing through deep learning.</p>
+        </div>
+
+        <section id="video"
+            class=" container justify-content-center flex-column embed-responsive embed-responsive-16by9 ">
+
+            <iframe class="w-100 h-100" src="https://www.youtube.com/embed/Cl3OVsp5pvc" frameborder="0"
+                allowfullscreen></iframe>
+        </section>
 
         <section id="authors" class="mb-4">
             <h2>Authors</h2>
@@ -107,73 +115,77 @@
                 industrial manufacturing.</p>
         </section>
 
-        <section id="results" class="mb-4 article-section">
-            <h2>Results</h2>
-            <div id="meuAcordeao">
-                <div class="card ">
-                    <div class="card align-items-center">
-                        <div class="card-header w-100" id="item1">
-                            <h2 class="mb-0">
-                                <button class="btn" type="button" data-toggle="collapse" data-target="#conteudo1" aria-expanded="true" aria-controls="conteudo1">
-                                    Resultado 1
-                                </button>
-                            </h2>
-                        </div>
-                
-                        <div id="conteudo1" class="collapse show" aria-labelledby="item1" data-parent="#meuAcordeao">
-                            <div class="card-body">
-                                <img src="result_image1.jpg" class="img-fluid mb-2" alt="Imagem do Resultado 1">
-                                <h5 class="card-title">Conteúdo do Resultado 1</h5>
-                                <p class="card-text">Alguma descrição ou informações adicionais aqui.</p>
-                            </div>
-                        </div>
-                    </div>
+
+        <section class="d-grid gap-3">
+            <h2 class="text-center">Results</h2>
+            <div class="row last-one hidden">
+                <div class="col">
+                    <h4>Training</h4>
+                    <p>The uploaded graph showcases a machine learning model's training and validation loss over several
+                        epochs in the context of crack detection in images. The "loss" reflects the model's error on the
+                        training set, and the "val_loss" shows the error on a separate validation set. Both losses
+                        decrease steadily as the number of epochs increases, which indicates that the model is
+                        effectively learning to detect cracks with increasing accuracy. The convergence of training and
+                        validation losses suggests that the model is generalizing well and not overfitting to the
+                        training data, though the losses have not bottomed out, hinting that further
+                        improvements are possible.</p>
                 </div>
-            
-                <div class="card align-items-center">
-                    <div class="card-header w-100" id="item2">
-                        <h2 class="mb-0">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#conteudo2" aria-expanded="false" aria-controls="conteudo2">
-                                Resultado 2
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="conteudo2" class="collapse" aria-labelledby="item2" data-parent="#meuAcordeao">
-                        <div class="card-body">
-                            <img src="result_image2.jpg" class="img-fluid" alt="Imagem do Item 2">
-                            <h5 class="card-title">Conteúdo do Resultado 2</h5>
-                            <p class="card-text">Alguma descrição ou informações adicionais aqui.</p>
-                        </div>
-                    </div>
-                </div> 
-                <div class="card align-items-center">
-                    <div class="card-header w-100" id="item3">
-                        <h2 class="mb-0">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#conteudo3" aria-expanded="false" aria-controls="conteudo3">
-                                Resultado 2
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="conteudo3" class="collapse" aria-labelledby="item3" data-parent="#meuAcordeao">
-                        <div class="card-body">
-                            <img src="result_image3.jpg" class="img-fluid" alt="Imagem do Item 2">
-                            <h5 class="card-title">Conteúdo do Resultado 3</h5>
-                            <p class="card-text">Alguma descrição ou informações adicionais aqui.</p>
-                        </div>
-                    </div>
+                <img class="col" src="result_image2.jpg" height="400" />
+            </div>
+            <div class="row  last-one hidden">
+                <div class="col">
+                    <h4>Dataset Validation</h4>
+                    <p>The graph displays the progression of a machine learning model's performance in detecting cracks
+                        in images over several training iterations, or epochs. It shows two lines: "dice_coef,"
+                        representing the Dice coefficient metric on the training dataset, and "val_dice_coef," for the
+                        validation dataset. Both lines trend upwards, indicating improving accuracy in crack detection
+                        as training progresses. The model is learning to identify cracks more precisely, with the
+                        parallel rise of both lines suggesting that it's not just memorizing the training images but
+                        generalizing well to new, unseen images. However, the Dice coefficients are below 1, signifying
+                        that while the model's performance is good, it is not perfect and could be improved with
+                        further refinement.</p>
                 </div>
+                <img class="col" src="result_image1.jpg" height="400" />
+            </div>
+            <div class="row last-one hidden">
+                <div class="col">
+                    <h4>Images Analysis</h4>
+                    <p>The image you've provided displays a collection of photos, each containing what appears to be
+                        cracks
+                        on various surfaces, with certain areas within each photo enclosed in red boxes. These red boxes
+                        are
+                        likely the output of a computer vision algorithm designed to detect and localize cracks. The
+                        algorithm seems to be identifying the regions where the cracks are most prominent and segmenting
+                        them from the rest of the image. The red boxes indicate the areas that the model has high
+                        confidence
+                        contain cracks, and the "0" labels may refer to the classification or confidence score given to
+                        these detections. The varying clarity and size of cracks across different backgrounds and
+                        textures
+                        demonstrate the model's capability to recognize cracks in diverse conditions, which is essential
+                        for
+                        practical applications such as infrastructure maintenance or quality control in manufacturing.
+                    </p>
+                </div>
+                <img class="col" src="cracks.jpg" height="400" />
+            </div>
+
+
+            <div class="row last-one hidden">
+                <div class="col">
+                    <h4>Model Output</h4>
+                    <p>The uploaded image seems to depict a sequence of images that represent the output of a machine
+                        learning model trained to detect cracks in surfaces. The top image appears to be the original
+                        input image, a grayscale photo of a surface with potential cracks. The subsequent images likely
+                        illustrate the model's attempt to identify and localize cracks. The highlighted yellow regions
+                        in the purple background are where the model has detected anomalies that it identifies as
+                        cracks. The varying size and shape of these detections in different panels suggest the model is
+                        testing different detection thresholds or is at different stages of processing. The fact that
+                        some images have larger detected areas while others have finer, more focused detections could
+                        imply an iterative process of refining the detection of cracks by the model.</p>
+                </div>
+                <img class="col" src="result_image3.jpg" height="400" />
             </div>
         </section>
-       
-
-        <h2>Explainer Video</h2>
-        <section id="video"
-            class=" container justify-content-center flex-column embed-responsive embed-responsive-16by9 ">
-            
-            <iframe class="w-100 h-100" src="https://www.youtube.com/embed/Cl3OVsp5pvc"
-                frameborder="0" allowfullscreen></iframe>
-        </section>
-
 
     </div>
 
@@ -209,6 +221,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

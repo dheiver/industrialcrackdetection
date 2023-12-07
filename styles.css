@@ -1,8 +1,8 @@
 /* Reset some default styles */
-body, h1, h2, h3, p, ul, li {
+/* body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-}
+} */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -10,8 +10,37 @@ body {
     color: #343a40;
     line-height: 1.6;
     width: 100%;
+    height: 100dvh;
+    padding-top: 56px;
+}
+.fade {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
+
+.hidden{
+    opacity: 0;
+    filter: blur(100px);
+    transition: all 4s;
+    transform: translateX(-100%);
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 3s;
+    transform: translateX(0%);
+
+}
 
 /* nav ul li {
     display: inline;
@@ -34,6 +63,10 @@ section {
 #meuCarrossel .carousel-control-prev-icon,
 #meuCarrossel .carousel-control-next-icon {
     background-color: #007bff; /* Substitua pela cor desejada */
+}
+#logo{
+    background: none;
+    mix-blend-mode: multiply
 }
 /* ul {
     margin-bottom: 20px;
@@ -76,6 +109,7 @@ footer p {
     header h1 {
         font-size: 24px;
     }
+  
 }
 
 @media (max-width: 400px) {
